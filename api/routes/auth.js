@@ -9,7 +9,7 @@ function getTokenFromHeader(req){
 }
 
 const auth = {
-    require: jwt({
+    required: jwt({
         secret,
         userProperty: 'playload',
         getToken: getTokenFromHeader

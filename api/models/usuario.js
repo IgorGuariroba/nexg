@@ -8,7 +8,7 @@ const secret            = require("../config").secret;
 const UsuarioSchema = new mongoose.Schema({
     nome: {
         type: String,
-        require: [true,"não pode ficar vazio."]
+        required: [true,"não pode ficar vazio."]
     },
     email: {
         type: String,
