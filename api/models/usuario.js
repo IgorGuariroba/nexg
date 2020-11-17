@@ -1,6 +1,6 @@
 const mongoose          = require("mongoose"),
         Schema          = mongoose.Schema;
-const uniqueValidator   = require('mongoose-unique-Validator');
+const uniqueValidator   = require('mongoose-unique-validator');
 const crypto            = require("crypto");
 const jwt               = require("jsonwebtoken");
 const secret            = require("../config").secret;

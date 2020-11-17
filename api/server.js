@@ -17,8 +17,8 @@ const isProduction = process.env.NODE_ENV === "production";
 const PORT = process.env.PORT || 3000;
 
 // ARQUIVOS ESTATICOS 
-app.use("/public", express.static(_dirname + "/public"));
-app.use("/public/images", express.static(_dirname + "/public/images"));
+app.use("/public", express.static(__dirname + "/public"));
+app.use("/public/images", express.static(__dirname + "/public/images"));
 
 // SETUP MONGOODB
 const dbs = require("./config/database");
@@ -42,7 +42,7 @@ app.use(bodyParser.json({ limit: 1.5*1024*1024}));
 // MODELS
 require("./models");
 // ROTAS
-app.use("/", require(".routes"));
+app.use("/", require("./routes"));
 
 // 404 - ROTA 
 app.use((req,res, next)=> {
