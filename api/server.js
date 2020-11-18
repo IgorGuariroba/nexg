@@ -1,11 +1,11 @@
 //PACOTES
-const compression = require("compression");
-const express = require("express");
-const ejs = require("ejs");
-const bodyParser = require("body-parser");
-const mongoose = require("mongoose");
-const morgan = require("morgan");
-const cors = require("cors");
+const compression   = require("compression");
+const express       = require("express");
+const ejs           = require("ejs");
+const bodyParser    = require("body-parser");
+const mongoose      = require("mongoose");
+const morgan        = require("morgan");
+const cors          = require("cors");
 
 
 // START
@@ -23,7 +23,11 @@ app.use("/public/images", express.static(__dirname + "/public/images"));
 // SETUP MONGOODB
 const dbs = require("./config/database");
 const dbURI = isProduction ? dbs.dbProduction : dbs.dbTest;
-mongoose.connect(dbURI, {useNewUrlParser: true});
+
+mongoose.createConnection(dbURI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+});
 
 // SETUP EJS
 app.set("view engine", "ejs");
