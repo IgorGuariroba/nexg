@@ -3,7 +3,7 @@ const secret = require("../config").secret;
 
 function getTokenFromHeader(req){
     if(!req.headers.authorization) return null;
-    const token = req.headers.authorization.split("");
+    const token = req.headers.authorization.split(" ");
     if(token[0] !== "Ecommerce") return null;
     return token[1];
 }
@@ -11,12 +11,12 @@ function getTokenFromHeader(req){
 const auth = {
     required: jwt({
         secret,
-        userProperty: 'playload',
+        userProperty: 'payload',
         getToken: getTokenFromHeader
     }),
     optional: jwt({
         secret,
-        userProperty: 'playload',
+        userProperty: 'payload',
         credentialsRequired: false,
         getToken: getTokenFromHeader
     })
