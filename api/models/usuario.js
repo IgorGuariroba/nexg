@@ -27,15 +27,15 @@ const UsuarioSchema = new mongoose.Schema({
         type: Array,
         default: ["cliente"]
     },
-    hash: { type: String },
-    salt: { type: String },
+    hash: String,
+    salt: String,
     recovery: {
         type: {
             token: String,
             date: Date
         },
         default: {}
-    }    
+    }
 },{ timestamps: true });
 
 UsuarioSchema.plugin(uniqueValidator, { message: "já está sendo utilizado" });
