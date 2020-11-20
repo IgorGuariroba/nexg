@@ -20,15 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="da2257f6-5dc2-4cb0-bc30-b0d8327a0042" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/config/multer.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/multer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/database.json" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/UsuarioController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/UsuarioController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/usuario.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/usuario.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/partials/header.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/partials/header.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/recovery/index.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/recovery/index.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/recovery/store.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/recovery/store.ejs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,6 +67,7 @@
       <option name="presentableId" value="Default" />
       <updated>1605677329036</updated>
       <workItem from="1605677330662" duration="1851000" />
+      <workItem from="1605758821646" duration="1328000" />
     </task>
     <servers />
   </component>
@@ -87,15 +84,16 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="182" y="147" width="1034" height="529" maximized="true" key="DiffContextDialog" timestamp="1605679182908">
+    <state x="182" y="147" width="1034" height="529" maximized="true" key="DiffContextDialog" timestamp="1605761670953">
       <screen x="72" y="27" width="1294" height="741" />
     </state>
-    <state x="182" y="147" width="1034" height="529" maximized="true" key="DiffContextDialog/72.27.1294.741@72.27.1294.741" timestamp="1605679182908" />
-    <state x="502" y="155" width="424" height="491" key="FileChooserDialogImpl" timestamp="1605679165521">
+    <state x="182" y="147" width="1034" height="529" maximized="true" key="DiffContextDialog/72.27.1294.741@72.27.1294.741" timestamp="1605761670953" />
+    <state x="502" y="155" width="424" height="491" key="FileChooserDialogImpl" timestamp="1605761570222">
       <screen x="72" y="27" width="1294" height="741" />
     </state>
-    <state x="502" y="155" width="424" height="491" key="FileChooserDialogImpl/72.27.1294.741@72.27.1294.741" timestamp="1605679165521" />
+    <state x="502" y="155" width="424" height="491" key="FileChooserDialogImpl/72.27.1294.741@72.27.1294.741" timestamp="1605761570222" />
   </component>
 </project>

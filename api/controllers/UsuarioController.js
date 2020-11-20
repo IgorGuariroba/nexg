@@ -1,6 +1,6 @@
 const mongoose            = require("mongoose");
 const Usuario             = mongoose.model("Usuario");
-// const enviarEmailRecovery = require("../helpers/email-recovery");
+const enviarEmailRecovery = require("../helpers/email-recovery");
 
 
 class UsuarioController {
@@ -31,13 +31,12 @@ class UsuarioController {
 
     // POST /registrar
     store(req, res, next){
-        const { nome, email, password } = req.body;
-
-        const usuario = new Usuario({ nome, email });
+        const { nome, email, password, loja } = req.body;
+        if(!nome || !email || !password, !loja) return res.status(422).json({ errors: "Preencha todos os campos do cadastro" });
+        const usuario = new Usuario({ nome, email, loja });
         usuario.setSenha(password);
-
         usuario.save()
-        .then(() => res.json({ usuario: usuario.enviarAuthJSON() }))
+        .then(() => res.json({ usuario: usuario.enviarAuthJSON()}))
         .catch((err) => {
             console.log(err);
             next(err);
@@ -79,8 +78,7 @@ class UsuarioController {
         }).catch(next);
     }
 
-
-     // RECOVERY
+    // RECOVERY
 
     // GET /recuperar-senha
     showRecovery(req, res, next){
@@ -96,11 +94,10 @@ class UsuarioController {
             if(!usuario) return res.render("recovery", { error: "Não existe usuário com este email", success: null });
             const recoveryData = usuario.criarTokenRecuperacaoSenha();
             return usuario.save().then(() => {
-                enviarEmailRecovery({ usuario, recovery: recoveryData }, (error = null, success = null) => {
-                    return res.render("recovery", { error, success });
-                });
-            }).catch(next);
-        }).catch(next);
+                // enviarEmailRecovery({ usuario, recovery: recoveryData }, (error = null, success = null) => {
+                    return res.render("recovery", { error: null, success: true });
+            }).catch(next); 
+        }).catch(next); 
     }
 
     // GET /senha-recuperada
