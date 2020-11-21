@@ -18,13 +18,13 @@ module.exports = ({usuario, recovery }, cb)=> {
     `;
     const opcoesEmail ={
         from: "naoresponder@lojacompreaqui.com",
-        to: usuario.emai,
+        to: usuario.email,
         subject: "Redefinicao de Senha - Loja Compre aqui",
         html: message
     };
 
     if(process.env.NODE_ENV === "producction"){
-        transporter.sendMail(opcoeesEmail, (error, info) => {
+        transporter.sendMail(opcoesEmail, (error, info) => {
             if(error){
                 console.log(error);
                 return cb("Aconteceu um erro no envio do email, tente novamente.");
