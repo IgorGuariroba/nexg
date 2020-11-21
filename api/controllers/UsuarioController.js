@@ -94,8 +94,9 @@ class UsuarioController {
             if(!usuario) return res.render("recovery", { error: "Não existe usuário com este email", success: null });
             const recoveryData = usuario.criarTokenRecuperacaoSenha();
             return usuario.save().then(() => {
-                // enviarEmailRecovery({ usuario, recovery: recoveryData }, (error = null, success = null) => {
-                    return res.render("recovery", { error: null, success: true });
+                enviarEmailRecovery({ usuario, recovery: recoveryData }, (error = null, success = null) => {
+                    return res.render("recovery", { error, success });
+                });
             }).catch(next); 
         }).catch(next); 
     }
@@ -104,6 +105,7 @@ class UsuarioController {
     showCompleteRecovery(req, res, next){
         if(!req.query.token) return res.render("recovery", { error: "Token não identificado", success: null });
         Usuario.findOne({ "recovery.token": req.query.token }).then(usuario => {
+            console.log("AQUI");
             if(!usuario) return res.render("recovery", { error: "Não existe usuário com este token", success: null });
             if( new Date(usuario.recovery.date) < new Date() ) return res.render("recovery", { error: "Token expirado. Tente novamente.", success: null });
             return res.render("recovery/store", { error: null, success: null, token: req.query.token });
@@ -112,6 +114,8 @@ class UsuarioController {
 
     // POST /senha-recuperada
     completeRecovery(req, res, next){
+        console.log(req.body);
+        debugger;
         const { token, password } = req.body;
         if(!token || !password) return res.render("recovery/store", { error: "Preencha novamente com sua nova senha", success: null, token: token });
         Usuario.findOne({ "recovery.token": token }).then(usuario => {
