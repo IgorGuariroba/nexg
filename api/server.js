@@ -21,6 +21,7 @@ app.use("/public/images", express.static(__dirname + "/public/images"));
 // SETUP MONGODB
 const dbs = require("./config/database");
 const dbURI = isProduction ? dbs.dbProduction : dbs.dbTest;
+mongoose.set('useCreateIndex', true)
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true  });
 
 // SETUP EJS
