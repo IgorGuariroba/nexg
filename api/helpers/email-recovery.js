@@ -26,7 +26,6 @@ module.exports = ({usuario, recovery }, cb)=> {
     if(process.env.NODE_ENV === "producction"){
         transporter.sendMail(opcoesEmail, (error, info) => {
             if(error){
-                console.log(error);
                 return cb("Aconteceu um erro no envio do email, tente novamente.");
             } else {
                 return cb(null, "Link para redefinicao de senha foi enviado com sucesso para seu email");

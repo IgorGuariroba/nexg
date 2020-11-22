@@ -1,9 +1,9 @@
 const router            = require("express").Router();
 const lojaValidation    = require("../../../controllers/validacoes/lojaValidation");
 const auth              = require("../../auth");
-const UsuarioController = require("../../../controllers/LojaController");
+const LojaController = require("../../../controllers/LojaController");
 
-const lojaController =  new UsuarioController();
+const lojaController =  new LojaController();
 
 router.get("/", lojaController.index);
 router.get("/:id", lojaController.show);
