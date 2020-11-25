@@ -1,16 +1,15 @@
-const mongoose = require("mongoose");
+const mongoose          = require("mongoose");
 const uniqueValidator   = require('mongoose-unique-validator');
-
 
 const LojaSchema = mongoose.Schema({
     nome: { type: String, required: true },
     cnpj: { type: String, required: true, unique: true },
-    email: { type: String},
+    email: { type: String },
     telefones: {
         type: [{ type: String }]
     },
     endereco: {
-        type:{
+        type: {
             local: { type: String, required: true },
             numero: { type: String, required: true },
             complemento: { type: String },
@@ -20,10 +19,8 @@ const LojaSchema = mongoose.Schema({
         },
         required: true
     }
-
 },{ timestamps: true });
 
 LojaSchema.plugin(uniqueValidator, { message: "já está sendo utilizado" });
 
-
-module.exports = mongoose.model("Loja",LojaSchema);
+module.exports = mongoose.model("Loja", LojaSchema);
