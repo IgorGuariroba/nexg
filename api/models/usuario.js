@@ -27,8 +27,8 @@ const UsuarioSchema = new mongoose.Schema({
         type: Array,
         default: ["cliente"]
     },
-    hash: String,
-    salt: String,
+    hash: { type: String },
+    salt: { type: String },
     recovery: {
         type: {
             token: String,
@@ -65,11 +65,11 @@ UsuarioSchema.methods.gerarToken = function(){
 
 UsuarioSchema.methods.enviarAuthJSON = function(){
     return {
-        _id:   this._id,
-        nome:  this.nome,
+        _id: this._id,
+        nome: this.nome,
         email: this.email,
-        loja:  this.loja,
-        role:  this.permissao,
+        loja: this.loja,
+        role: this.permissao,
         token: this.gerarToken()
     };
 };
