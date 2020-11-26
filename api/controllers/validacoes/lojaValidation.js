@@ -2,9 +2,10 @@ const mongoose = require("mongoose");
 const Usuario  = mongoose.model("Usuario");
 const Loja     = mongoose.model("Loja");
 
-const BaseJoi = require("joi");
+// IMPORT LIB VALIDATION
+const BaseJoi   = require("joi");
 const Extension = require("joi-date-extensions");
-const Joi = BaseJoi.extend(Extension);
+const Joi       = BaseJoi.extend(Extension);
 
 const LojaValidation = {
     admin: (req,res,next) => {

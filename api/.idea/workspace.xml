@@ -21,7 +21,10 @@
   <component name="ChangeListManager">
     <list default="true" id="da2257f6-5dc2-4cb0-bc30-b0d8327a0042" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/usuario.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/usuario.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/validacoes/lojaValidation.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/validacoes/lojaValidation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/validacoes/usuarioValidation.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/validacoes/usuarioValidation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api/v1/lojas.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api/v1/lojas.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api/v1/usuarios.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api/v1/usuarios.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +77,8 @@
       <updated>1605677329036</updated>
       <workItem from="1605677330662" duration="1851000" />
       <workItem from="1605758821646" duration="1328000" />
-      <workItem from="1606266204815" duration="2446000" />
+      <workItem from="1606266204815" duration="3045000" />
+      <workItem from="1606357500216" duration="1857000" />
     </task>
     <servers />
   </component>

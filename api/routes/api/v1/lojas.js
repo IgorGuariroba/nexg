@@ -1,7 +1,8 @@
 const router = require("express").Router();
+const auth   = require("../../auth");
 
-const auth = require("../../auth");
-const Validation = require("express-validation");
+// VALIDATION IMPORT
+const Validation         = require("express-validation");
 const { LojaValidation } = require("../../../controllers/validacoes/lojaValidation");
 
 const LojaController = require("../../../controllers/LojaController");
